@@ -1,11 +1,11 @@
-# 🛡️ IAM Provisioning Lab : Architecture Hybride Automatisée
+#  IAM Provisioning Lab : Architecture Hybride Automatisée
 
-## 📋 Présentation
+##  Présentation
 Ce projet est un démonstrateur technique (POC) illustrant la gestion du cycle de vie des identités (**Identity Lifecycle Management**) dans un environnement distribué. 
 
 L'objectif est de simuler une chaîne de provisionnement complète : de la source de vérité (HR/Directory) vers une application cible (SaaS), en appliquant des règles de gestion (RBAC) et de nettoyage de données.
 
-## 🏗️ Architecture
+##  Architecture
 L'infrastructure repose sur 3 machines virtuelles interconnectées via un réseau privé, déployées via **Vagrant** (Infrastructure as Code) :
 
 | Rôle | Serveur | Technologie | Description |
@@ -14,7 +14,7 @@ L'infrastructure repose sur 3 machines virtuelles interconnectées via un résea
 | **Cible** | `iam-app` | **Python/Flask** | Simule une application SaaS (Target System) exposant une API REST. |
 | **Moteur** | `iam-control`| **Python** | Héberge le moteur de réconciliation et les règles métiers. |
 
-## 🚀 Fonctionnalités Démontrées (JML)
+##  Fonctionnalités Démontrées (JML)
 
 ### 1. Joiner (Embauche)
 * Détection automatique des nouveaux utilisateurs dans l'annuaire LDAP.
@@ -35,7 +35,7 @@ L'infrastructure repose sur 3 machines virtuelles interconnectées via un résea
 * **Infrastructure :** Vagrant, VirtualBox, Ubuntu 20.04 LTS.
 * **Services :** Systemd (Service Linux), Cron (Planification).
 
-## 📦 Installation & Usage
+##  Installation & Usage
 
 1. **Déploiement de l'infra :**
    ```bash
