@@ -1,0 +1,48 @@
+# 1. On crée les dossiers (Unités Organisationnelles)
+dn: ou=People,dc=iam,dc=lab
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Groups,dc=iam,dc=lab
+objectClass: organizationalUnit
+ou: Groups
+
+# 2. On crée le Groupe Finance (GID 5000)
+dn: cn=Finance,ou=Groups,dc=iam,dc=lab
+objectClass: posixGroup
+cn: Finance
+gidNumber: 5000
+
+# 3. Utilisateur : Alice (Active, Groupe Finance)
+dn: cn=Alice Dupont,ou=People,dc=iam,dc=lab
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: Alice Dupont
+sn: Dupont
+givenName: Alice
+# IMPORTANT : description = statut pour notre script
+description: Active
+uid: adupont
+uidNumber: 1001
+gidNumber: 5000
+homeDirectory: /home/adupont
+loginShell: /bin/bash
+userPassword: password123
+
+# 4. Utilisateur : Bob (Inactif, Pas de groupe spécifique)
+dn: cn=Bob Martin,ou=People,dc=iam,dc=lab
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: Bob Martin
+sn: Martin
+givenName: Bob
+# IMPORTANT : Statut Inactif
+description: Inactive
+uid: bmartin
+uidNumber: 1002
+gidNumber: 5001
+homeDirectory: /home/bmartin
+loginShell: /bin/bash
+userPassword: password123
